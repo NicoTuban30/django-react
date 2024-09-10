@@ -1,0 +1,76 @@
+Backend installation/setup
+1. Create requirements.txt
+2. paste this to requirements.txt
+asgiref
+Django
+django-cors-headers
+djangorestframework
+djangorestframework-simplejwt
+PyJWT
+pytz
+sqlparse
+psycopg2-binary
+python-dotenv
+3. pip install -r requirements.txt
+4. django-admin startproject backend - create a project in django
+5. python manage.py startapp api - create app for api
+6. What is JWT?
+json web token - will act as the permissions or authentication everytime we access a website.
+ex. Login ---->JWT----->backend
+if username and password is send to the backend, then the backend will respond/share a 2 tokens to the frontend and store it.
+    a. Access token - request
+    b. Refresh token - To refresh the access token
+        - if access token is expired within 30mins the frontend will send refresh token to request new access token.
+7. Create User
+  - create views
+  - Add route for the authentications in the projects urls.py
+8. Create serializers
+9. python manage.py makemigrations
+10. python manage.py migrate
+11. python manage.py runserver
+12. create custom model for Notes
+13. create urls.py to api app for Notes
+
+Frontend installation/setup
+1. npm create vite@latest frontend -- --template react - it creates frontend directory and install react on that directory.
+2. cd frontend
+3. npm install axios react-router-dom jwt-decode
+
+Organizing files and folders 
+
+4. delete the App.css and index.css files
+5. Under frontend/src create these directories.
+    -pages
+    -styles
+    -components
+6. Create these files on src
+    -constants.js
+    -api.js - to get our api token
+7. Create a file on frontend.
+    -.env
+8. writing protected routes
+    - add file to components - ProtectedRoute.jsx - setting up an authentication system via tokens
+9. Navigation & pages - create these files to pages directory.
+    -Home.jsx
+    -Login.jsx
+    -NotFound.jsx
+    -Register.jsx
+10. Add all the routing pages to App.jsx
+11. npm run dev
+12. Add Form.jsx to component for login and register
+13. Adding form styles
+    - add file to styles - Form.css
+14. Connecting the login or register form
+15. Deployment configuration
+    - add .git ignore 
+    - create .env file to the backend for database configuration
+    - create .choreo folder to the backend 
+    - create endpoints.yaml file inside the .choreo folder
+    - create Procfile
+16. Add to github
+    - git init
+    - git add .
+    - git commit -m "first commit"
+
+
+
